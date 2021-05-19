@@ -1,6 +1,5 @@
 #!/usr/bin/python3
+"""Class of a square"""
 class Square():
-    '''
-        An empty square class
-    '''
+    """ Definition of square"""
     pass
