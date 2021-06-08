@@ -17,7 +17,7 @@ class Rectangle(Base):
         super().__init__(id)
 
     @property
-    def width(sel, value):
+    def width(self):
         """getter of width"""
         return self.__width
 
@@ -31,7 +31,7 @@ class Rectangle(Base):
         self.__width = value
 
     @property
-    def height(sel, value):
+    def height(self):
         """getter of height"""
         return self.__height
 
@@ -45,7 +45,7 @@ class Rectangle(Base):
         self.__height = value
 
     @property
-    def x(sel, value):
+    def x(self):
         """getter of x"""
         return self.__x
 
@@ -59,7 +59,7 @@ class Rectangle(Base):
         self.__x = value
 
     @property
-    def y(sel, value):
+    def y(self):
         """getter of y"""
         return self.__y
 
@@ -86,11 +86,17 @@ class Rectangle(Base):
 
     def __str__(self):
         """ overriding the str method"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y,
-                                                       self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
+                                                       self.__y,
+                                                       self.__width,
+                                                       self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """assign an argument to each attribute"""
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
         try:
             self.id = args[0]
             self.__width = args[1]
@@ -98,4 +104,9 @@ class Rectangle(Base):
             self.__x = args[3]
             self.__y = args[4]
         except IndexError:
-            return
+            pass
+
+    def to_dictionary(self):
+        """ return the dictionary representation of rectangle"""
+        return {'x': self.__x, 'y': self.__y, 'id': self.id,
+                'height': self.__height, 'width': self.__width}
