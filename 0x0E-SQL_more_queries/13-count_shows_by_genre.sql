@@ -1,4 +1,4 @@
---lists all genres from hbtn_0d_tvshows and displays the number of shows linked
+-- lists all genres from hbtn_0d_tvshows and displays the number of shows linked
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_show_genres
 RIGHT JOIN tv_shows
