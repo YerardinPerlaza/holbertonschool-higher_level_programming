@@ -1,3 +1,4 @@
 #!/usr/bin/node
-const add = require('./13-add').add;
-console.log(add(3, 5));
+exports.add = function (num1, num2) {
+  return (num1 + num2);
+};
