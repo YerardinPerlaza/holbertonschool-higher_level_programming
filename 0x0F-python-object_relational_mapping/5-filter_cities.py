@@ -5,16 +5,10 @@ import sys
 
 
 def list_cities():
-    """Takes arguments argv to list from database
-    Only lists with states that matches name argument
-    Arguments:
-        argv[1]: mysql username
-        argv[2]: mysql password
-        argv[3]: database name
-    """
+    """Takes arguments argv to list from database"""
     if len(sys.argv) == 5:
         db = MySQLdb.connect(host="localhost",
-                            port=3306,
+                             port=3306,
                              user=sys.argv[1],
                              passwd=sys.argv[2],
                              db=sys.argv[3])
