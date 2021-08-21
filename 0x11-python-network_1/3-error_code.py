@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""cript that takes in a URL, sends a request to the URL and displays the body of the response"""
 import sys
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
