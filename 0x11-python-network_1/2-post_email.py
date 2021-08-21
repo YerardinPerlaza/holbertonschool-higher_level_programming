@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""script that takes in a URL and an email, sends a POST request to the passed URL with the email"""
+"""script takes in a URL and an email, sends a
+POST request to passed URL with email"""
 #!/usr/bin/python3
 import sys
 from urllib.request import Request, urlopen
