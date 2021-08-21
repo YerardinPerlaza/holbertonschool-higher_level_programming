@@ -10,9 +10,9 @@ if __name__ == "__main__":
     url = sys.argv[1]
     values = {'email': sys.argv[2]}
     data = urlencode(values)
-    data = data.encode('utf-8')
+    data = data.encode('ascii')
     req = Request(url, data)
 
     with urlopen(req) as request:
         response = request.read()
-    print(response.decode("utf-8"))
+        print(response.decode("utf-8"))
