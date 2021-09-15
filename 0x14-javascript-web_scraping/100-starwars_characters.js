@@ -6,7 +6,7 @@ require('request').get('https://swapi-api.hbtn.io/api/films/' + process.argv[2],
   } else {
     const characters = JSON.parse(body).characters;
     for (const character of characters) {
-      require('request')(character, function (error, resp, body) {
+      require('request').get(character, function (err, resp, body) {
         if (err) {
           console.log(err);
         } else {
